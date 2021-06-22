@@ -1,6 +1,6 @@
 # gitCrashCourse
 
-Git book:
+Based on git book:
 https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 
 ### Step 1 - local repository
@@ -76,7 +76,25 @@ First, we need to create a repository on GitHub.
 Second:
 ```
 git remote add origin git@github.com:kvashchuka/gitCrashCourseProject.git
-git push -u origin main
+git push -u origin master
 ```
 
-Now we run into problems with naming of branches.
+You can also do:
+```
+git fetch <remote>
+git remote show origin
+git remote rename <old name> <new name>
+git remote remove <name>
+git remote --help
+```
+
+### Step 2.1 - cloning existing repository
+```
+git clone <repository ssh>
+```
+
+### Step 3 - understanding branching
+
+Branching means you diverge from the main line of development and continue to do work without messing with that main line.
+
+
