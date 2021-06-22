@@ -19,20 +19,64 @@ print("Hello, World!")
 Now we initialize the repository:
 ```
 git init
+ls -a
 ```
-
-After we make changes to the file, see that the changes are not tracked because we did not add the file. Use commands:
-```
-git add main.py
-git commit -m "Change printing message to Hello, Summer!"
-git log
-```
-Another useful commands at this stage:
+Now we see `.git` folder in it.
+Let's try now:
 ```
 git status
 git diff
-git log --oneline
+git log 
 ```
 
 Picture to explain possible status of the files:
 ![](lifecycle_of_files_in_git.png)
+
+1. Make some changes to the file 
+2. Do
+```
+git status
+git diff
+```
+2. Now add the file:
+```
+git add main.py
+```
+3. Do some more changes
+4. Again
+```
+git status
+git diff
+```
+5. Finally 
+```
+git add main.py
+git commit -m "Add main.py and change print message in it"
+```
+
+Repeat one more time, but now commit after creating and adding the file and second time after making changes.
+
+Do `git log` and `git log --oneline` and inspect the history.
+
+Note: no, you do not need to make a separate commit when you start from empty file. 
+However, it definitely make sense to add file and track it';s changes. 
+Especially when you start from some file that you want to modify.
+
+**Important: Commit often! Commit with good commit messages!**
+![](git_commit_messages.png)
+
+### Step 2 - remotes
+```
+git remote
+git remote -v
+```
+Now we do not have any remote repository. Let's connect one.
+First, we need to create a repository on GitHub.
+
+Second:
+```
+git remote add origin git@github.com:kvashchuka/gitCrashCourseProject.git
+git push -u origin main
+```
+
+Now we run into problems with naming of branches.
